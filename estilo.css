@@ -1,0 +1,106 @@
+body {
+	background-image: url(fundo2.jpg);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+
+img {
+	width: 150px;
+	height: 150px;
+	margin: 10px 10px 10px 90px;
+}
+
+.cabeçalho {
+	background: #B40431;
+}
+
+#titulo {
+	float: right;
+	margin-right: 560px;
+	margin-top: 40px;
+	font-family: Monotype Corsiva, "Trebuchet MS", sans-serif;
+	font-size: 5em;
+	color: #fff;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.7);
+	margin-top: 10px;
+}
+
+h3, h4, h5 {
+	font-family: "Lato" sans-serif;
+	color: #B40431;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+footer {
+	background: #fff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+p {
+	margin-top: 10px;
+	margin-left: 30px;
+	margin-right: 30px;
+	font: bold;
+}
+
+.legendas {
+	font-family: "Lato" sans-serif;
+	color: #B40431;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#resolucao {
+	padding: 10px;
+}
+
+.redes {
+	width: 30px;
+	height: 30px;
+}
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+	#titulo {
+		display: none;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	#titulo {
+		display: none;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	#titulo {
+		margin-top: 40px;
+		margin-right: 70px;
+		font-size: 4em;
+	}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	#titulo {
+		margin-top: 50px;
+		margin-right: 200px;
+		font-size: 4em;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	
+}

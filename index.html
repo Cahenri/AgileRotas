@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- HTML5Shiv -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <title>AgiliRotas</title>
+    <link rel="icon" href="calculator-8x.png">
+
+    <script src="funções.js"></script>
+
+  </head>
+
+  <body>
+
+    <header class="cabeçalho">
+        <img src="logo.png">
+        <a href="#"><h1 id="titulo">AgileRotas</h1></a>
+        <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container"> 
+          
+          
+
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="nav-principal">
+            <ul id="link" class="navbar-nav ml-auto mt-1">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link"><img class="redes" src="facebook.png">Face</a>
+              </li>
+              <li class="nav-item">
+                <a href="loja.html" class="nav-link"><img class="redes" src="twitter.png">Twitter</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link"><img class="redes" src="instagram.png">Insta</a>
+              </li>
+               
+            </ul>            
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+     
+      <h3>O que é AgileRotas?</h3>
+      <p>A AgileRotas é uma simples aplicação que permite você você calcular suas rotas em viagens curtas ou longas. Sabemos que outros serviços apresentam as mesmas aplicações de busca de hoteis, passagens etc... Mas o diferencial da nossa aplicação é não precisar de registros, basta acessar, e preencher os valores de forma gratuita. </p>
+
+      <h3>Como utilizar:</h3>
+      <p>A utilização é simples, esteja apenas com os valores que precisarão ser preenchidos nos campos, nós calcularemos por blocos e no final iremos calcular todos os resultados de modo a retornar o valor total gasto ida e volta da sua viagem. Nossa aplicação não exige que você saia da página, porém é recomendavel que você acesse o site da <a href="https://www.gov.br/antt/pt-br">ANTT</a> para saber os valores atualizados dos postos de pedagios.</p> 
+          
+      <h3>Let's Go!!!</h3>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Procure seu destino e descubra a kilometragem:</h4> 
+          <iframe class="ml-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14638.642737924432!2d-45.074368125518596!3d-23.47270097347882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53e57d437c6d%3A0x7af55680f1dbde53!2sPraia%20Grande!5e0!3m2!1spt-BR!2sbr!4v1668803914305!5m2!1spt-BR!2sbr" width="400" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>         
+        </div>
+
+        <div class="col-md-6">
+          <fieldset>
+            <legend class="legendas">Gasto Combustivel:</legend>
+            <hr>
+            <div class="form-group mt-1 mr-5">
+              <label class="legendas">Informe a distancia em KM:</label>
+              <input id="Dkm" class="form-control form-control-sm ml-2 mr-5" type="text" placeholder="km"
+              >
+
+              <label class="legendas">Informe o desempenho do seu carro:</label>
+              <input id="Dcar" class="form-control form-control-sm ml-2 mr-5" type="text" placeholder="km"
+              >
+
+              <label class="legendas">Informe o preço do combustivel em sua cidade:</label>
+              <input id="Pbust" class="form-control form-control-sm ml-2 mr-5" type="text" placeholder="R$"
+              >
+
+              <div id="resolucao">
+                <button class="btn btn-primary" onclick="calcularValorCombustivel()">Calcular</button>
+                <input id="resul" type="text" disabled="disabled">
+              </div>
+
+          </fieldset>
+        </div>
+
+      </div>
+
+      <h4>Informe o preço dos pedagios:</h4>
+      <p>Preencha apenas a quantidade de pedagios na sua rota:
+      ATENÇÂO: Acesse o site da ANTT para saber os preços das tarifas de forma atualizada clicando aqui. <button class="btn btn-warning" onclick="annt()"> Clique aqui</button></p>
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <label class="legendas">Pedagio ida 1</label>
+          <input id="pI1" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+        <div class="col-md-3">
+          <label class="legendas">Pedagio ida 2</label>
+          <input id="pI2" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+        <div class="col-md-3">
+          <label class="legendas">Pedagio ida 3</label>
+          <input id="pI3" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+        <div class="col-md-3">
+          <label class="legendas">Pedagio ida 4</label>
+          <input id="pI4" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <label class="legendas">Pedagio volta 1</label>
+          <input id="pV1" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+        <div class="col-md-3">
+          <label class="legendas">Pedagio volta 2</label>
+          <input id="pV2" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+        <div class="col-md-3">
+          <label class="legendas">Pedagio volta 3</label>
+          <input id="pV3" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+        <div class="col-md-3">
+          <label class="legendas">Pedagio volta 4</label>
+          <input id="pV4" class="form-control form-control-sm ml-2 mr-4" type="text" placeholder="R$">
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <button onclick="calcularPedagio()" class="btn btn-primary">Calcular</button><input type="text" disabled="disabled" id="resultadoPed">
+          </div>
+        </div>
+      </div>
+      <h3>Vai Passar a noite?</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <label class="legendas">Preço Hospedagem:</label>
+          <input class="form-control form-control-sm ml-2 mr-5" type="text" placeholder="R$" id="hosp">
+        </div>
+        <div class="col-md-4">
+          <label class="legendas">Diarias</label>
+          <input class="form-control form-control-sm ml-2 mr-5" type="text" placeholder="Ex: 2" id="diar">
+        </div>
+        <div class="col-md-4">
+          <label class="legendas">Vai dividir em quantas pessoas?</label>
+          <input class="form-control form-control-sm ml-2 mr-5" type="text" placeholder="Ex: 3" id="pess">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary" onclick="calcularDiarias()">Calcular</button><input type="text" disabled="disabled" id="resulDiarias">
+          </div>
+        </div>
+      </div>
+
+      <h5>Se a sua consulta passou pelos 3 formulários, saiba o valor total de quanto aproximadamente 
+      ficara apenas clicando em visualizar: </h4>
+      <div class="row mt-3">
+        <div class="col-md-12 d-flex justify-content-center">
+          <button class="btn btn-primary mb-3" onclick="calculoGeral()">Visualizar</button>
+          <input id="resultadoGeral" class="mb-3" type="text" disabled="disabled">
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <h5>&copy; Todos os direitos reservados - Caio Henrique - 2022</h5> 
+    </footer>
+
+
+
+
+
+
+       <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
